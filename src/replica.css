@@ -1,0 +1,90 @@
+
+:root {
+  --c-bg: #0c0f14;
+  --c-fg: #e5e7eb;
+  --c-primary: #6366f1;
+  --c-accent: #6366f1;
+  --c-surface: #0c0f14;
+  --c-muted: rgba(255,255,255,0.72);
+  --c-border: rgba(255,255,255,0.12);
+
+  --radius: 12px;
+  --shadow-soft: 0 8px 20px rgba(0,0,0,0.18);
+  --font-primary: Inter, sans-serif;
+  --font-heading: Inter, sans-serif;
+}
+
+/* Base typography and background */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+}
+
+/* Map common Tailwind colors to replica palette */
+.bg-white, .bg-gray-50, .bg-gray-100 { background: var(--c-bg) !important; }
+.replica-card.bg-white, .replica-card.bg-gray-50, .replica-card.bg-gray-100 { background: var(--c-surface) !important; }
+.bg-slate-900, .bg-gray-900 { background: var(--c-bg) !important; }
+.text-gray-900, .text-slate-900, .text-black { color: var(--c-fg) !important; }
+.text-gray-600, .text-gray-500 { color: var(--c-muted) !important; }
+.bg-indigo-600, .bg-blue-600, .bg-primary-600 { background: var(--c-primary) !important; }
+.hover\:bg-indigo-700:hover, .hover\:bg-blue-700:hover { background: color-mix(in srgb, var(--c-primary) 85%, black) !important; }
+.text-indigo-600, .text-blue-600 { color: var(--c-primary) !important; }
+.border-gray-200, .border-gray-300 { border-color: var(--c-border) !important; }
+
+/* Utilities */
+.btn-primary {
+  background: var(--c-primary);
+  color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.card, .section-fallback, .section-custom {
+  background: var(--c-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+a { color: var(--c-primary); }
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* Replica component classes for template usage */
+.replica-root {
+  background: var(--c-bg);
+  color: var(--c-fg);
+}
+
+.replica-section {
+  background: transparent;
+  padding: 0;
+}
+
+.replica-card {
+  background: var(--c-surface);
+  border-color: var(--c-border);
+  border-radius: var(--radius);
+}
+
+.replica-heading {
+  color: var(--c-fg);
+  font-family: var(--font-heading);
+}
+
+.replica-text {
+  color: var(--c-muted);
+}
+
+.replica-button {
+  background: var(--c-primary);
+  border-radius: var(--radius);
+  color: #fff;
+}
